@@ -106,6 +106,10 @@ class TapeBuffer(ReplayBufferBase):
         rng = np.random.default_rng(jax.random.bits(key).item())
         count = 0
         while count < size:
+            # The following few lines cause a known bug where the 3 latest episodes
+            # are excluded from sampling. I leave the bug as-is so my experiments
+            # can be reproduced. Please see https://github.com/proroklab/memoroids/issues/1
+            # for a fix.
             start_idx = rng.integers(len(self.episode_starts) - 1 - 1)
             start = self.episode_starts[start_idx]
             end = self.episode_starts[start_idx + 1]
