@@ -47,4 +47,13 @@ python segment_dqn.py experiments/cartpole_easy/segment_s5_10_100.yaml # Run SBB
 You may need to set up a `wandb` account to log metrics to the cloud.
 
 ## Citation
-Coming soon!
+```bibtex
+@article{morad2024recurrent,
+  title={Recurrent reinforcement learning with memoroids},
+  author={Morad, Steven and Lu, Chris and Kortvelesy, Ryan and Liwicki, Stephan and Foerster, Jakob and Prorok, Amanda},
+  journal={Advances in Neural Information Processing Systems},
+  volume={37},
+  pages={14386--14416},
+  year={2024}
+}
+```
